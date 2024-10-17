@@ -23,8 +23,8 @@ contract PasarBuku {
 
     function membeliBuku(uint _id) public payable {
         Buku storage buku = semuaBuku[_id];
+        require(buku.hargaBuku <= msg.value, "Silakan bayar yang sesuai")
         buku.pemilikBuku = msg.sender;
-
     }
 
 }
